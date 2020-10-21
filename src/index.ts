@@ -50,15 +50,12 @@ const getList = (
     middlewares,
     async (req: Request, res: Response, next: NextFunction) => {
       let { sort, range, filter } = req.query;
-      
-      console.log(req.query);
-      
       if (sort) {
         const a = JSON.parse(sort);
         sort = { [a[0]]: a[1] === "ASC" ? 1 : -1 };
       }
       let skip = 0;
-      let limit = 100;
+      let limit = 1000;
       if (range) {
         const a = JSON.parse(range);
         skip = a[0];
