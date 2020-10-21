@@ -51,7 +51,7 @@ const getList = (
     async (req: Request, res: Response, next: NextFunction) => {
       let { sort, range, filter } = req.query;
       
-      console.log(query);
+      console.log(req.query);
       
       if (sort) {
         const a = JSON.parse(sort);
