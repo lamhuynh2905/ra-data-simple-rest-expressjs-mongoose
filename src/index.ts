@@ -50,6 +50,9 @@ const getList = (
     middlewares,
     async (req: Request, res: Response, next: NextFunction) => {
       let { sort, range, filter } = req.query;
+      
+      console.log(query);
+      
       if (sort) {
         const a = JSON.parse(sort);
         sort = { [a[0]]: a[1] === "ASC" ? 1 : -1 };
